@@ -4,16 +4,26 @@
 ![Course](https://img.shields.io/badge/Harvard-CS50AI-A51C30)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Project work for [Harvard's CS50AI](https://cs50.harvard.edu/ai/) (taught by Brian Yu and David J. Malan), an introduction to the concepts and algorithms at the foundation of modern AI. The course moves from classical symbolic methods (search, logic, probabilistic reasoning, optimization) to machine learning, neural networks and transformer-based language models. This repository contains my implementations of eleven of its projects, each one a self-contained program with its own README covering the idea, the implementation and how to run it.
+Project work for [Harvard's CS50AI](https://cs50.harvard.edu/ai/) (taught by Brian Yu and David J. Malan), an introduction to the concepts and algorithms at the foundation of modern AI. The course moves from classical symbolic methods (search, logic, probabilistic reasoning, optimization) to machine learning, neural networks and transformer-based language models. I completed the course in 2025 and earned the [CS50 certificate](#certificate). This repository contains my implementations of eleven of its twelve projects, each one a self-contained program with its own README covering the idea, the implementation and how to run it.
 
 ## Contents
 
+- [Certificate](#certificate)
 - [Course map](#course-map)
 - [Projects](#projects)
 - [Concepts and skills covered](#concepts-and-skills-covered)
 - [Repository structure](#repository-structure)
 - [Setup and running](#setup-and-running)
 - [Credits and license](#credits-and-license)
+
+## Certificate
+
+Awarded by Harvard's CS50 on completion of *CS50's Introduction to Artificial Intelligence with Python, including twelve projects* (2025), signed by David J. Malan.
+
+[![CS50AI certificate](certificate/CS50AI_certificate.png)](certificate/CS50AI_certificate.pdf)
+
+- Verify online: [cs50.harvard.edu/certificates/9e71c885-9c88-4aac-b8ba-20a179bae8cb](https://cs50.harvard.edu/certificates/9e71c885-9c88-4aac-b8ba-20a179bae8cb)
+- PDF copy: [`certificate/CS50AI_certificate.pdf`](certificate/CS50AI_certificate.pdf)
 
 ## Course map
 
@@ -95,6 +105,7 @@ CS50AI/
 ├── traffic/        # CNN for GTSRB
 ├── parser/         # CFG parser and NP chunker
 ├── attention/      # BERT attention diagrams and analysis
+├── certificate/    # CS50AI certificate (PDF and preview)
 ├── LICENSE
 └── README.md
 ```

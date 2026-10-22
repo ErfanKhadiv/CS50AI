@@ -4,7 +4,7 @@
 ![Course](https://img.shields.io/badge/Harvard-CS50AI-A51C30)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Project work for [Harvard's CS50AI](https://cs50.harvard.edu/ai/) (taught by Brian Yu and David J. Malan), an introduction to the concepts and algorithms at the foundation of modern AI. The course moves from classical symbolic methods (search, logic, probabilistic reasoning, optimization) to machine learning, neural networks and transformer-based language models. I completed the course in 2025 and earned the [CS50 certificate](#certificate). This repository contains my implementations of eleven of its twelve projects, each one a self-contained program with its own README covering the idea, the implementation and how to run it.
+Project work for [Harvard's CS50AI](https://cs50.harvard.edu/ai/) (taught by Brian Yu and David J. Malan), an introduction to the concepts and algorithms at the foundation of modern AI. The course moves from classical symbolic methods (search, logic, probabilistic reasoning, optimization) to machine learning, neural networks and transformer-based language models. I completed the course in 2025 and earned the [CS50 certificate](#certificate). This repository contains my implementations of all twelve of its projects, each one a self-contained program with its own README covering the idea, the implementation and how to run it.
 
 ## Contents
 
@@ -31,6 +31,7 @@ Awarded by Harvard's CS50 on completion of *CS50's Introduction to Artificial In
 | --- | --- | --- | --- |
 | 0 | Search | [`degrees/`](degrees) | Breadth-first search on a graph |
 | 0 | Search | [`tictactoe/`](tictactoe) | Minimax with alpha-beta pruning |
+| 1 | Knowledge | [`knights/`](knights) | Propositional logic and model checking |
 | 1 | Knowledge | [`minesweeper/`](minesweeper) | Propositional inference over constraint sentences |
 | 2 | Uncertainty | [`pagerank/`](pagerank) | Markov chain sampling and iterative convergence |
 | 2 | Uncertainty | [`heredity/`](heredity) | Bayesian network, inference by enumeration |
@@ -50,6 +51,8 @@ Awarded by Harvard's CS50 on completion of *CS50's Introduction to Artificial In
 **[Tic-Tac-Toe](tictactoe)** is an AI that plays optimally using minimax. X maximizes the board utility (+1 win, 0 draw, -1 loss) and O minimizes it. Alpha-beta pruning cuts off branches that cannot change the result, and ties between equally good moves are broken at random so games vary. The AI reports how many actions it explored on each move. It cannot be beaten, since the best a human can achieve is a draw.
 
 ### Knowledge
+
+**[Knights](knights)** solves Knights and Knaves logic puzzles, where knights always tell the truth and knaves always lie. Each puzzle is encoded as a knowledge base of propositional sentences (every character is exactly one of knight or knave, and each statement is true if the speaker is a knight and false if a knave). A model-checking routine enumerates all truth assignments and reports only the facts that hold in every model consistent with the knowledge base.
 
 **[Minesweeper](minesweeper)** is an AI that plays Minesweeper using logical inference only. Each revealed number becomes a sentence of the form "exactly *n* of these cells are mines". The AI marks cells that a sentence proves safe or mined, propagates that to all other sentences, and derives new sentences from subset relations between them (`set2 - set1 = count2 - count1`). When no safe move can be proven, it falls back to a random move.
 
@@ -82,7 +85,7 @@ Awarded by Harvard's CS50 on completion of *CS50's Introduction to Artificial In
 ## Concepts and skills covered
 
 - **Search:** BFS, adversarial search, game trees, pruning
-- **Knowledge representation:** propositional logic, constraint sentences, inference by subset reasoning
+- **Knowledge representation:** propositional logic, model checking, constraint sentences, inference by subset reasoning
 - **Probabilistic reasoning:** Markov chains, Bayesian networks, joint and conditional probability, enumeration
 - **Optimization:** constraint satisfaction, arc consistency (AC-3), backtracking with heuristics
 - **Machine learning:** supervised classification, train/test evaluation, sensitivity and specificity, Q-learning
@@ -96,6 +99,7 @@ Awarded by Harvard's CS50 on completion of *CS50's Introduction to Artificial In
 CS50AI/
 ├── degrees/        # BFS shortest path (small dataset included)
 ├── tictactoe/      # minimax + alpha-beta pruning
+├── knights/        # Knights and Knaves puzzles, model checking
 ├── minesweeper/    # logical-inference agent
 ├── pagerank/       # sampling + iterative PageRank, 3 test corpora
 ├── heredity/       # Bayesian network over 3 sample families
@@ -116,7 +120,7 @@ Each project is self-contained. Python 3.9+ is recommended. Install the dependen
 
 | Project | Dependencies |
 | --- | --- |
-| `degrees`, `pagerank`, `heredity`, `crossword`, `nim` | Python standard library (`crossword` image output needs Pillow) |
+| `degrees`, `knights`, `pagerank`, `heredity`, `crossword`, `nim` | Python standard library (`crossword` image output needs Pillow) |
 | `tictactoe`, `minesweeper` | `pygame` |
 | `shopping` | `scikit-learn` |
 | `traffic` | `tensorflow`, `opencv-python`, `scikit-learn` |
@@ -144,4 +148,4 @@ See each project's own README for exact arguments, datasets and example output.
 
 Course materials and problem specifications are by the [CS50AI](https://cs50.harvard.edu/ai/) staff at Harvard. Released under the MIT license; see [LICENSE](LICENSE).
 
-The course provided starter code for each project, including the `Crossword` and `Variable` data structures in `crossword.py`, the `runner.py` interfaces for `tictactoe` and `minesweeper`, `util.py` and the data loading in `degrees`, the `Minesweeper` game class, the probability tables and scaffolding in `heredity`, `crawl` in `pagerank`, and `generate_diagram` in `attention`. The solving and learning logic is my own coursework: `shortest_path` (`degrees`), the game model and `minimax` (`tictactoe`), `Sentence` and `MinesweeperAI` (`minesweeper`), `transition_model`, `sample_pagerank` and `iterate_pagerank` (`pagerank`), `joint_probability`, `update` and `normalize` (`heredity`), the CSP solver in `generate.py` (`crossword`), model training in `shopping.py`, Q-learning in `nim.py`, the grammar and chunking in `parser.py`, the CNN architecture in `traffic.py`, and the helper functions and analysis in `attention`.
+The course provided starter code for each project, including the `Crossword` and `Variable` data structures in `crossword.py`, the `runner.py` interfaces for `tictactoe` and `minesweeper`, `logic.py` in `knights`, `util.py` and the data loading in `degrees`, the `Minesweeper` game class, the probability tables and scaffolding in `heredity`, `crawl` in `pagerank`, and `generate_diagram` in `attention`. The solving and learning logic is my own coursework: `shortest_path` (`degrees`), the game model and `minimax` (`tictactoe`), the knowledge bases in `puzzle.py` (`knights`), `Sentence` and `MinesweeperAI` (`minesweeper`), `transition_model`, `sample_pagerank` and `iterate_pagerank` (`pagerank`), `joint_probability`, `update` and `normalize` (`heredity`), the CSP solver in `generate.py` (`crossword`), model training in `shopping.py`, Q-learning in `nim.py`, the grammar and chunking in `parser.py`, the CNN architecture in `traffic.py`, and the helper functions and analysis in `attention`.

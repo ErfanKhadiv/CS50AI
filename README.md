@@ -1,7 +1,6 @@
 # CS50's Introduction to Artificial Intelligence with Python
 
 Problem sets completed for [Harvard CS50AI](https://cs50.harvard.edu/ai/), covering search, knowledge, uncertainty, optimization, machine learning, neural networks, and language.
-> These are official course problem sets, not original research — see [HBALS-TSP](https://github.com/ErfanKhadiv/HBALS-TSP) for that. Included here as evidence of hands-on coverage of core AI fundamentals.
 
 | Project                                                                   | Topic                          | What it does                                                                        |
 | ------------------------------------------------------------------------- | ------------------------------ | ----------------------------------------------------------------------------------- |
